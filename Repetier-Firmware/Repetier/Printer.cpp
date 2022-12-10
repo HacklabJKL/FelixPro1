@@ -1573,6 +1573,7 @@ void Printer::homeZAxis() // Cartesian homing
 #if Z_HOME_DIR < 0 && MIN_HARDWARE_ENDSTOP_Z && FEATURE_Z_PROBE && Z_PROBE_PIN == Z_MIN_PIN
 		// Fix error from z probe testing
 		zCorrection -= axisStepsPerMM[Z_AXIS]*EEPROM::zProbeHeight();
+		Com::printFLN(PSTR("correction:"), (float)zCorrection);
 #endif		
 #if defined(ENDSTOP_Z_BACK_ON_HOME)
 		// If we want to go up a bit more for some reason
@@ -1583,8 +1584,8 @@ void Printer::homeZAxis() // Cartesian homing
 		// Fix bed coating
 		zCorrection += axisStepsPerMM[Z_AXIS] * Printer::zBedOffset;
 #endif
-        PrintLine::moveRelativeDistanceInSteps(0,0,zCorrection,0,homingFeedrate[Z_AXIS],true,false);
-        currentPositionSteps[Z_AXIS] = ((Z_HOME_DIR == -1) ? zMinSteps : zMaxSteps - Printer::zBedOffset * axisStepsPerMM[Z_AXIS]);
+        //PrintLine::moveRelativeDistanceInSteps(0,0,zCorrection,0,homingFeedrate[Z_AXIS],true,false);
+        currentPositionSteps[Z_AXIS] = ((Z_HOME_DIR == -1) ? (zMinSteps - zCorrection) : zMaxSteps - Printer::zBedOffset * axisStepsPerMM[Z_AXIS]);
 #if NUM_EXTRUDER > 0
         currentPositionSteps[Z_AXIS] -= Extruder::current->zOffset;
 #endif

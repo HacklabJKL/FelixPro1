@@ -361,11 +361,11 @@ It also can add a delay to wait for spindle to run on full speed.
 #define HOMING_FEEDRATE_Y 50
 #define HOMING_FEEDRATE_Z 3
 #define HOMING_ORDER HOME_ORDER_XYTZ
-#define ZHOME_MIN_TEMPERATURE 185
-#define ZHOME_HEAT_ALL 1
+#define ZHOME_MIN_TEMPERATURE 0
+#define ZHOME_HEAT_ALL 0
 #define ZHOME_HEAT_HEIGHT 10
-#define ZHOME_X_POS 140
-#define ZHOME_Y_POS 210
+#define ZHOME_X_POS 100
+#define ZHOME_Y_POS 150
 #define ENABLE_BACKLASH_COMPENSATION 0
 #define X_BACKLASH 0
 #define Y_BACKLASH 0
@@ -446,8 +446,8 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 
 // #################### Z-Probing #####################
 
-#define Z_PROBE_Z_OFFSET 0.065
-#define Z_PROBE_Z_OFFSET_MODE 1
+#define Z_PROBE_Z_OFFSET 0
+#define Z_PROBE_Z_OFFSET_MODE 0
 #define UI_BED_COATING 0
 #define FEATURE_Z_PROBE 1
 #define Z_PROBE_BED_DISTANCE 3
@@ -461,7 +461,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 1
 #define Z_PROBE_REPETITIONS 1
-#define Z_PROBE_HEIGHT 0
+#define Z_PROBE_HEIGHT 1.4
 #define Z_PROBE_START_SCRIPT "M84"
 #define Z_PROBE_FINISHED_SCRIPT ""
 #define Z_PROBE_REQUIRES_HEATING 1

@@ -24,7 +24,7 @@
 
 #include <math.h>
 #include <stdint.h>
-#define REPETIER_VERSION "0.92.8 - 04A" // Changed to reflect internal FELIX version
+#define REPETIER_VERSION "0.92.8_LAB_JKL" // Changed to reflect internal FELIX version
 
 // ##########################################################################################
 // ##                                  Debug configuration                                 ##
